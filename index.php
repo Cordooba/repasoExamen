@@ -1,9 +1,11 @@
 <?php  
-	
+
+	require_once 'app/config.php';
+	require_once $base_path.'db/db.php';
+	require_once $base_path.'db/ussers.php';
+
 	global $base_path;
 	global $path_admin;
-
-	require_once $base_path.'db/ussers.php';
 
 	if ( $_POST ) {
 
@@ -18,8 +20,12 @@
 
 			$_SESSION['usser'] = $usser;
 
-			header('Location: '.$path_admin);
+			header('Location: '.$admin);
 			exit();
+
+		}else{
+
+			$error = true;
 
 		}
 
